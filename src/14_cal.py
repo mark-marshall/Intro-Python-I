@@ -22,3 +22,18 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+# grab list of arguments
+args = sys.argv
+# get current date info
+today = datetime.today()
+#conditionally render calendar depending on no of args
+if len(args) == 1:
+  print(calendar.month(today.year, today.month))
+elif len(args) == 2:
+  print(calendar.month(today.year, int(args[1])))
+elif len(args) == 3:
+  print(calendar.month(int(args[2]), int(args[1])))
+else:
+  print("Please enter no more than 2 parameters: (1) month, and (2) year")
+sys.exit()  
